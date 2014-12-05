@@ -6,7 +6,7 @@ $pdver = "1.0";
 $zerover = "1.0";
 $ccbt = "88x31.png"; //大きいアイコン
 //$ccbt = "80x15.png"  小さいアイコン
-$exp = "2";  //1:日本語文章での正式な表示　2：英略記
+$expr = "2";  //1:日本語文章での正式な表示　2：英略記
 
 //第一引数の入力値と返還後一覧
 $lcs = array(
@@ -50,9 +50,9 @@ $ccnames = array(
 	);
 
 
-//$exp === 1 (正式記法)
-function cprt_exp1($cpid, $workttl, $author, $format, $workurl, $morepermurl, $f1, $f2, $orgurl){
-	global $ccver, $pdver, $zerover, $ccbt, $exp, $lcs, $fmts, $ccnames;
+//$expr === 1 (正式記法)
+function cprt_expr1($cpid, $workttl, $author, $format, $workurl, $morepermurl, $f1, $f2, $orgurl){
+	global $ccver, $pdver, $zerover, $ccbt, $expr, $lcs, $fmts, $ccnames;
 //$codeに必要な文字列を追加していく。最終的に$codeを出力
 $code = "";
 
@@ -107,9 +107,9 @@ else{
 //関数終わり
 };
 
-//$exp === ２ (英略記法)
-function cprt_exp2($cpid, $workttl, $author, $format, $workurl, $morepermurl, $f1, $f2, $orgurl){
-	global $ccver, $pdver, $zerover, $ccbt, $exp, $lcs, $fmts, $ccnames;
+//$expr === ２ (英略記法)
+function cprt_expr2($cpid, $workttl, $author, $format, $workurl, $morepermurl, $f1, $f2, $orgurl){
+	global $ccver, $pdver, $zerover, $ccbt, $expr, $lcs, $fmts, $ccnames;
 //$codeに必要な文字列を追加していく。最終的に$codeを出力
 $code = "";
 
@@ -160,7 +160,7 @@ return $code;
 
 //関数定義
 function cprt(){
-	global $ccver, $pdver, $zerover, $ccbt, $exp, $lcs, $fmts, $ccnames;
+	global $ccver, $pdver, $zerover, $ccbt, $expr, $lcs, $fmts, $ccnames;
 
    $num = func_num_args(); //引数の数を出力
    if($num >= 8){
@@ -197,10 +197,10 @@ function cprt(){
 	    $f1 = "href=\"http://purl.org/dc/dcmitype/{$fomat}\"";
 	    $f2 = "rel=\"dct:type\"";
 	}
-    if($exp == "1"){
-    	return cprt_exp1($cpid, $workttl, $author, $format, $workurl, $morepermurl, $f1, $f2, $orgurl);
-    }elseif($exp == "2"){
-    	return cprt_exp2($cpid, $workttl, $author, $format, $workurl, $morepermurl, $f1, $f2, $orgurl);
+    if($expr == "1"){
+    	return cprt_expr1($cpid, $workttl, $author, $format, $workurl, $morepermurl, $f1, $f2, $orgurl);
+    }elseif($expr == "2"){
+    	return cprt_expr2($cpid, $workttl, $author, $format, $workurl, $morepermurl, $f1, $f2, $orgurl);
     }else{
         return "error: something wrong with choosing exp.";
     }
