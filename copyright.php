@@ -1,4 +1,11 @@
 <?php
+/*
+copyright.php
+Copyright (c) 2014 KosukeSera
+This software is released under the MIT License.
+http://opensource.org/licenses/mit-license.php
+*/
+
 
 //設定
 $ccver = "4.0";		//pd,cc0に関してはver1.0を使用

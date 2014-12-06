@@ -1,5 +1,9 @@
 #copyright.php
 
+##ライセンス
+MITライセンスで公開しています。LICENSE.txtを参照のこと。
+This software is released under the MIT License, see LICENSE.txt.
+
 ##これは何？  
 投稿作品にライセンス表示をつけさせたい時に使用します。  
 cprt()という関数を定義してあり、必要な引数を入れると必要な著作権表示（Webコード）を返します。  
@@ -83,5 +87,5 @@ copyright.phpの最上部でいくつか設定が可能です。
 
 3. 表記方法  
 
-	* $exp = 1 : 日本語文章での正式な表示 (ex)この作品は・・・
-	* $exp = 2 ： 英略記   (ex)work by author All rights reserved.
+	* $expr = 1 : 日本語文章での正式な表示 (ex)この作品は・・・
+	* $expr = 2 ： 英略記   (ex)work by author All rights reserved.
